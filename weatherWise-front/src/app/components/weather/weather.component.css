@@ -1,0 +1,20 @@
+.temp , .humidity , .ville{
+    width: auto;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 13px;
+}
+.flex-elm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ville{
+    width: 200px;
+    padding: 14px;
+}

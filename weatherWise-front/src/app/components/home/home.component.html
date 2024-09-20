@@ -1,0 +1,6 @@
+@if (weatherResponse() | async; as weather) {
+    <app-weather (search)="searchFilter($event)" [weatherProps]="weather"></app-weather>
+}
+
+
+
