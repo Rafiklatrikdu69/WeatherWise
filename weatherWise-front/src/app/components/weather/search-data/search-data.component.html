@@ -1,15 +1,12 @@
 <div class="container">
     <h1>Weather App</h1>
-    <form [formGroup]="personForm" (ngSubmit)="searchFilter()">
+    <form [formGroup]="weatherForm" (ngSubmit)="searchFilter()">
         <div>
-        <label for="name">City: </label>
-        <input id="name" type="text" formControlName="city" />
-      </div>
-        <button id="searchButton">Search</button>
-        <div class="weather-info">
-            <h2 id="location"></h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
+            @if (weatherForm.controls.city.errors) {
+                <div>Veuillez rentrer une ville</div>
+            }
+            <input id="name" type="text" formControlName="city" />
         </div>
+        <button id="searchButton">Search</button>
     </form>
 </div>

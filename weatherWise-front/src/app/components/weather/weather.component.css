@@ -1,3 +1,8 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .temp , .humidity , .ville{
     width: auto;
     height: auto;

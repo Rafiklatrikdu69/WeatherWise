@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-data',
@@ -10,11 +10,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class SearchDataComponent {
   @Output() search: EventEmitter<string> = new EventEmitter();
-  personForm = new FormGroup({
-    city: new FormControl(''),
-
+  weatherForm = new FormGroup({
+    city: new FormControl('',[Validators.required]),
   });
   searchFilter(){
-    this.search.emit(this.personForm.value.city as string);
+    if (this.verifySearch(this.weatherForm)) {
+      this.search.emit(this.weatherForm.value.city as string);
+    }
+  }
+  verifySearch(weatherForm:FormGroup):boolean{
+    return weatherForm.value.city!.length != 0
   }
 }

@@ -1,17 +1,19 @@
-<app-search-data (search)="searchFilter($event)"></app-search-data>
-
-<div class="flex-elm">
-    <div class="ville">
-        <h1>Ville</h1>
-        <p>{{weatherProps?.name}}</p>
+<main>
+    <app-search-data (search)="searchFilter($event)"></app-search-data>
+    
+    <div class="flex-elm">
+        <div class="ville">
+            <h1>Ville</h1>
+            <p>{{weatherProps?.name}}</p>
+        </div>
+        <div class="temp">
+            <h1>Température</h1>
+            <p>{{weatherProps?.main!.temp | temp}} °C</p>
+        </div>
+        <div class="humidity">
+            <h1>Humidité</h1>
+            <p>{{weatherProps?.main!.humidity}} %</p>
+        </div>
+        
     </div>
-    <div class="temp">
-        <h1>Température</h1>
-        <p>{{weatherProps?.main!.temp | temp}} °C</p>
-    </div>
-<div class="humidity">
-    <h1>Humidité</h1>
-    <p>{{weatherProps?.main!.humidity}} %</p>
-</div>
-
-</div>
+</main>
